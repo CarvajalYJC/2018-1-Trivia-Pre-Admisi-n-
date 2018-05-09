@@ -39,3 +39,165 @@
     <script src="externo.js"></script>
 </body>
 </html>
+
+body{
+   background-color: #ffff00;  /* El color de fondo de la página */
+}
+h1{
+  text-align:center;  /* El título estará en el centro */
+  background: #fff;  /* El color del fondo será blanco */
+  color: black;  /* El color de la letra será negro */
+  height: 40px;
+  font-family: inherit;1
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  width: 100%;  /* Hacemos que la cabecera ocupe el ancho completo de la página */
+  left: 0;  /* Posicionamos la cabecera al lado izquierdo */
+  top: 0;  /* Posicionamos la cabecera pegada arriba */
+  position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+img{  /* La imagen en el subtítulo */
+  margin: 15;
+  padding: 20;
+}
+  blockquote{  /* Los detalles del texto y el link te lleva a Laboratoria */
+    background-color: #e8e800;
+    line-height: 40px;
+    width:100%;
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid;
+    text-align:center;
+    font-family: inherit;
+    font-size: 35px;
+    font-variant: normal;
+    margin: 0;
+    padding: 0;
+    height: 160px;
+}
+  ul {  /* El fondo de la lista */
+    background-color: #d5d500;
+    line-height: 10px;
+    width:97.4%;
+}
+  li {  /* Los detalles de la lista */
+    display: inline-block;
+    padding: 1% 10%;
+    text-align: center;
+    color: #000000;
+    font-family: inherit;
+    font-size: 25px;
+    font-variant: normal;
+}
+  #player {
+    background-color: #e8e800;
+    width:100%;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    text-align:center;
+    color: #000000;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 20px;
+    font-variant: normal;
+}
+  #result {
+    background-color: #e8e800;
+    width:100%;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    text-align: center;
+    font-family: inherit;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    font-variant: normal;
+}
+  #notresult {
+    text-align: center;
+    color: #000000;
+    font-family: inherit;
+    font-weight: bold; 
+    font-size: 20px;
+    font-variant: normal;
+}
+
+// Contador de puntaje.
+var score = 0;
+// Preguntar el nombre.
+var name = prompt ("¡Bienvenida! ¿Cuál es tu nombre?");
+// Declarar variable de respuesta. si/no
+var triviaAnswer = [
+  "si",
+  "no"
+];
+// Ingresar pregunta, si es identico a 0: "¡Perfecto, iniciemos!
+var game = prompt("¡Bienvenida! ¿Quieres jugar? (Si/No)");
+  game= game.toLowerCase();
+  if (triviaAnswer.indexOf(game) === 0 ){
+    alert("¡Perfecto, iniciemos!");
+document.getElementById("player").innerHTML = "Queremos decirte cuáles son tus resultados " + name;
+// Pregunta número 1
+var oneQuestion = prompt("¿En qué año nació Laboratoria?");
+if (oneQuestion ==="2014"){
+    alert("¡Correcto!");
+    score++;
+}
+else {
+    alert("¡Incorrecto! \n \n La respuesta es: 2014");
+}
+// Pregunta número 2
+var twoQuestion = prompt("¿Quién fue la creadora de Laboratoria?");
+  questions= twoQuestion.toLowerCase();
+if (questions ==="mariana costa"){
+    alert("¡Correcto!");
+    score++;
+}
+else {
+    alert("¡Incorrecto! \n \n La respuesta es: Mariana Costa");
+}
+// Pregunta número 3
+var threeQuestion = prompt("¿Es la pre-admisión el último paso para formar parte del bootcamp?");
+  threeQuestion= threeQuestion.toLowerCase();
+if (threeQuestion ==="si"){
+    alert("¡Correcto!");
+    score++;
+}
+else {
+    alert("¡Incorrecto! \n \n La respuesta es: Sí");
+}
+// Pregunta número 4
+var fourQuestion = prompt("¿Cuántos meses dura el bootcamp?");
+if (fourQuestion ==="6"){
+    alert("¡Correcto!");
+    score++;
+}
+else {
+    alert("¡Incorrecto! \n \n La respuesta es: 6");
+}
+// Pregunta número 5
+var fiveQuestion = prompt("¿Cuál es el lenguaje que aprenderás durante el bootcamp?")
+  fiveQuestion= fiveQuestion.toLowerCase();
+if (fiveQuestion ==="javascript"){
+    alert("¡Correcto!");
+    score++
+}
+else {
+    alert("¡Incorrecto!  \n \n La respuesta es: Javascript");
+}
+// Cierra "¿Deseas Jugar?"
+} else {
+    alert("¡Nooooooooooo! =( ¡Vuelve pronto!");
+}
+// Si la persona juega.
+console.log(score);
+if(triviaAnswer.indexOf(game) ===0) {
+    document.getElementById("result") .innerHTML = "Haz acertado en " + score + " preguntas de 5.";
+    }
+    else {
+        document.getElementById("notresult") .innerHTML = "APRENDE A PROGRAMAR  Y TRANSFORMA TU FUTURO";
+}
